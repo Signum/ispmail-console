@@ -2,15 +2,12 @@
 
 <h1>Domains</h1>
 
+<p>
+  These are the internet domains that you control.
+  Click on one to manage its mailboxes and forwardings.
+</p>
+
 <div id="domains">
   <ul class="uk-grid-small uk-child-width-1 uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
   <%= render @domains %>
 </div>
-
-<%= link_to "New domain", new_domain_path %>
-
-<%= fas_icon_text 'address-book', 'Address Book' %>
-<%= fas_icon_text 'address-book', 'Address Book', icon_size: '2x' %>
-
-<%= fab_icon_text 'apple', 'Apple' %>
-<%= fab_icon_text 'apple', 'Apple', icon_size: '2x' %>

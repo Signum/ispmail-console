@@ -1,5 +1,7 @@
 <li>
-    <div class="uk-card uk-card-default uk-card-body uk-text-center">
-      <%= link_to domain %>
-    </div>
+    <%= link_to domain do %>
+      <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-text-center">
+        <%= domain %>
+      </div>
+    <% end %>
 </li>

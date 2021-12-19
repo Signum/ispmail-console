@@ -1,3 +1,7 @@
 $global-link-color: #DA7D02;
 $global-muted-background: #f4f4f4;
 $button-default-background: #f4f4f4;
+
+.uk-navbar-nav > li.uk-active > a {
+  font-weight: 500;
+}

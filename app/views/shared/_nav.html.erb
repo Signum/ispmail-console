@@ -11,6 +11,7 @@
             </a>
         </div>
 
+        <div class="uk-navbar-center">
         <ul class="uk-navbar-nav">
             <li class="uk-active">
                 <a href="/domains">
@@ -28,19 +29,24 @@
                 </a>
             </li>
         </ul>
+        </div>
 
         <div class="uk-navbar-right">
-            <div class="uk-navbar-item">
+            <%# <div class="uk-navbar-item">
                 <div class="uk-margin">
                     <form class="uk-search uk-search-default">
                         <a href="" uk-search-icon></a>
                         <input class="uk-search-input" type="search" placeholder="Search">
                     </form>
                 </div>
-            </div>
+            </div> %>
 
             <ul class="uk-navbar-nav">
-                <li><a href="#"><span class="uk-icon" uk-icon="icon: user"></span>Login</a></li>
+                <li>
+                    <a href="#">
+                        <%= fas_icon 'key' %> Login
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
