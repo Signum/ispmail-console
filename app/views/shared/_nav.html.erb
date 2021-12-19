@@ -1,0 +1,48 @@
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky" style="border-bottom: 1px solid #c0c0c0">
+
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="uk-navbar-left">
+            <a href="/" class="uk-navbar-item uk-logo">
+                <div class="uk-logo" style="line-height: .9em">
+                    ISPmail
+                    <br />
+                    <span class="uk-text-muted">console</span>
+                </div>
+            </a>
+        </div>
+
+        <ul class="uk-navbar-nav">
+            <li class="uk-active">
+                <a href="/domains">
+                    <%= fas_icon 'globe' %> Domains
+                </a>
+            </li>
+            <li>
+                <a href="/accounts">
+                    <%= fas_icon 'envelope' %> Mailboxes
+                </a>
+            </li>
+            <li>
+                <a href="/aliases">
+                    <%= fas_icon 'at' %> Forwardings
+                </a>
+            </li>
+        </ul>
+
+        <div class="uk-navbar-right">
+            <div class="uk-navbar-item">
+                <div class="uk-margin">
+                    <form class="uk-search uk-search-default">
+                        <a href="" uk-search-icon></a>
+                        <input class="uk-search-input" type="search" placeholder="Search">
+                    </form>
+                </div>
+            </div>
+
+            <ul class="uk-navbar-nav">
+                <li><a href="#"><span class="uk-icon" uk-icon="icon: user"></span>Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+</div>
