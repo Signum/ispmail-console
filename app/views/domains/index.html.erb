@@ -4,22 +4,10 @@
     <div class="uk-width-auto uk-flex uk-flex-middle">
       <h1>Domains</h1>
     </div>
-    <div class="uk-width-expand uk-flex uk-flex-middle">
-      <ul class="uk-pagination uk-flex-center">
-        <li><a href="#"><span uk-pagination-previous></span></a></li>
-        <li><a href="#">1</a></li>
-        <li class="uk-disabled"><span>...</span></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">6</a></li>
-        <li class="uk-active"><span>7</span></li>
-        <li><a href="#">8</a></li>
-        <li><a href="#">9</a></li>
-        <li><a href="#">10</a></li>
-        <li class="uk-disabled"><span>...</span></li>
-        <li><a href="#">20</a></li>
-        <li><a href="#"><span uk-pagination-next></span></a></li>
-      </ul>
+    <div class="uk-width-expand">
+      <div class="uk-flex-center uk-flex">
+        <%= will_paginate @domains, renderer: UiKitLinkRenderer %>
+      </div>
     </div>
     <div class="uk-width-auto uk-flex uk-flex-middle ">
       <div class="uk-margin">
