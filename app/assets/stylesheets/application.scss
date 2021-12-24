@@ -10,13 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require my_uikit
  * = require_tree .
  * = require_self
  */
 
 @import "uikit/scss/variables-theme.scss";
 @import "uikit/scss/mixins-theme.scss";
+@import "my_uikit.scss";
 @import "uikit/scss/uikit-theme.scss";
 
 @import 'fontawesome-all';
