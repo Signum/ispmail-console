@@ -2,18 +2,18 @@
 
 <div class="uk-grid-small uk-grid-match uk-margin-bottom" uk-grid>
     <div class="uk-width-auto uk-flex uk-flex-middle">
-      <h1>Domains</h1>
+      <h1>Domain wählen</h1>
     </div>
     <div class="uk-width-expand">
       <div class="uk-flex-center uk-flex">
         <%= will_paginate @domains, renderer: UiKitLinkRenderer %>
       </div>
     </div>
-    <div class="uk-width-auto uk-flex uk-flex-middle ">
+    <div class="uk-width-auto uk-flex uk-flex-middle">
       <div class="uk-margin">
           <form class="uk-search uk-search-default">
               <a href="" uk-search-icon></a>
-              <input class="uk-search-input" type="search" placeholder="Search">
+              <input class="uk-search-input" name="search" type="search" placeholder="Suchen">
           </form>
       </div>
     </div>

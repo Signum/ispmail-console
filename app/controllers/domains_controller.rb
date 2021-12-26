@@ -3,7 +3,15 @@ class DomainsController < ApplicationController
 
   # GET /domains or /domains.json
   def index
-    @domains = Domain.paginate(page: params[:page], per_page: 12)
+    @domains = Domain
+
+    # text search
+    if params[:search].present?
+      # logger.debug "Searching for #{params[:search]}"
+      @domains = @domains.textsearch(params[:search])
+    end
+
+    @domains = @domains.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /domains/1 or /domains/1.json
