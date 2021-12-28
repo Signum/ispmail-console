@@ -5,10 +5,12 @@ class DomainsController < ApplicationController
   def index
     @domains = Domain
 
+    @search_query = params[:search]
+
     # text search
-    if params[:search].present?
+    if @search_query.present?
       # logger.debug "Searching for #{params[:search]}"
-      @domains = @domains.textsearch(params[:search])
+      @domains = @domains.textsearch(@search_query)
     end
 
     @domains = @domains.paginate(page: params[:page], per_page: 12)
