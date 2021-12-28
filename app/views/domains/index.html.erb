@@ -1,30 +1,44 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="uk-grid-small uk-grid-match uk-margin-bottom" uk-grid>
-    <div class="uk-width-auto uk-flex uk-flex-middle">
-      <h1>Domain wählen</h1>
-    </div>
-    <div class="uk-width-expand">
-      <div class="uk-flex-center uk-flex">
-        <%= will_paginate @domains, renderer: UiKitLinkRenderer %>
+<%= turbo_frame_tag 'page' do %>
+  <div class="uk-grid-small uk-grid-match uk-margin-bottom" uk-grid>
+      <div class="uk-width-auto uk-flex uk-flex-middle">
+        <h1>Your Domains</h1>
       </div>
-    </div>
-    <div class="uk-width-auto uk-flex uk-flex-middle">
-      <div class="uk-margin">
-          <form class="uk-search uk-search-default">
-              <a href="" uk-search-icon></a>
-              <input class="uk-search-input" name="search" type="search" placeholder="Suchen">
-          </form>
+      <div class="uk-width-expand">
+        <div class="uk-flex-center uk-flex">
+          <%= will_paginate @domains, renderer: UiKitLinkRenderer %>
+        </div>
       </div>
-    </div>
-</div>
+      <div class="uk-width-auto uk-flex uk-flex-middle">
+        <div class="uk-margin">
+            <form class="uk-search uk-search-default">
+                <a href="" uk-search-icon></a>
+                <%= text_field_tag(:search, @search_query, class: "uk-search-input", type: "search", placeholder: "Suchen", autofocus: true) %>
+            </form>
+        </div>
+      </div>
+  </div>
 
-<%# <p class="uk-text-meta uk-margin-remove-top">
-  These are the internet domains that you control.
-  Click on one to manage its mailboxes and forwardings.
-</p> %>
+  <p class="uk-text-meta uk-margin-remove-top">
+    These are the internet domains that you control.
+    Click on one to manage its mailboxes and forwardings.
+  </p>
 
-<div id="domains">
-  <ul class="uk-grid-small uk-child-width-1 uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
-  <%= render @domains %>
-</div>
+  <div id="domains">
+    <% if @domains.any? %>
+      <ul class="uk-grid-small uk-child-width-1 uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
+        <%= render @domains %>
+      </ul>
+    <% else %>
+      <p>No Domains found.</p>
+      <% if @search_query %>
+        <p>You are looking for domains containing
+        "<%= @search_query %>" in its name.
+        Should I show
+        <%= link_to 'all', domains_path %>
+        Domains instead?</p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
