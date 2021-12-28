@@ -3,11 +3,14 @@
 // $button-default-background: #f4f4f4;
 
 // $global-primary-background: #fff7f3;
-$navbar-background: #ede9d0;
+
+$navbar-background: #4e4e4e;
 $global-emphasis-color: #8b4a4b;
 
 $pagination-item-active-color: #1b3d2f;
 $pagination-item-color: #959600;
+
+$base-link-color: #959600;
 
 @mixin hook-pagination-item-active(){
   background: #ede9d0;
